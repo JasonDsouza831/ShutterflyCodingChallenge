@@ -21,7 +21,7 @@ public class CodingTest {
     static class AverageCustomerValue{
         int weeknum;  //Week number to get range of dates which fit within this week
         int numvisitsperweek;  //Number of days in a week spent visiting sites
-        int year;
+        int year; //year of site visit
         double expenditurepervisit;
         AverageCustomerValue(){
             //startdate=null;
@@ -34,7 +34,7 @@ public class CodingTest {
     }
     static 	class Pivotclass{
         String custid;
-        double totalltv;
+        double totalltv; //Total ltv for that customer over all site visits in all weeks
         Pivotclass(){
             custid=null;
             totalltv=0.0;
@@ -131,8 +131,9 @@ public class CodingTest {
                             l12 = h.get(lc.custid);
                             for (int i = 0; i < l12.size(); i++) {
                                 if (l12.get(i).weeknum == week1 && l12.get(i).year == year1) {
-                                    l12.get(i).expenditurepervisit += Double.parseDouble(amountpair);
+                                    l12.get(i).expenditurepervisit += 52*(Double.parseDouble(amountpair))*10; //LTV is calculated here
                                     lc.totalltv+=l12.get(i).expenditurepervisit;
+                                    //lc.totalltv+=l12.get(i).expenditurepervisit;
                                     h.put(lc.custid, l12);
                                 }
                                 else
