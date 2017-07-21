@@ -219,6 +219,13 @@ public class CodingTest {
         }
 
         //System.out.println("ltvarlen - x is " + (ltvarlen - x));
+        System.out.println("Following are the ltv entries for customers:-");
+        System.out.println("Customer id     Ltv for that customer");
+        for(int i=0;i<ltvarlen;i++)
+        {
+            System.out.println(lt[i].custid +"\t\t" +lt[i].totalltv);
+        }
+        System.out.println("\n\n");
         LTVclass ind = TopXSimpleLTVUtils(ltvarlen - x,finallist,0,ltvarlen-1,lt,ltvarlen);
         //int index = Partition(x,finallist,0,ltvarlen-1,lt,ltvarlen);
         if(ind.totalltv==-1) {
@@ -234,7 +241,7 @@ public class CodingTest {
                 max=lt[i].totalltv;
         }
         System.out.println("Max element is "+max);
-        System.out.println("Top "+x+" elements are ");
+        System.out.println("Top "+x+" Customers are :-");
         for(int i=0;i<ltvarlen;i++)
         {
             if(lt[i].totalltv>ind.totalltv && lt[i].totalltv<=max)
