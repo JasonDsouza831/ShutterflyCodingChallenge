@@ -45,7 +45,6 @@ public class CodingTest {
      * Fetch the index , and match with n-x(n-x because xth from end/max needed)
       * Once found, iterate and find max element in array
       * When found n-xth smallest or xth largest and max elem, iterate and find all elems which lie between these 2 elements
-      * Time - O(n)
       * space - O(n)*/
     // Note- It asks for value of x at runtime
     public static void main(String args[]) throws ParseException {
